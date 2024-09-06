@@ -5,7 +5,8 @@ import Image from "next/image";
 import { FaPlay } from "react-icons/fa";
 
 export default async function HeroSection() {
-    const marqueeData = await fetch("https://youtube.googleapis.com/youtube/v3/playlistItems?key=AIzaSyCoUXFn6VXOkikrXzyXjl8tcRvluTJU_Hc&playlistId=PLYH1y5BwRZwEMp8OfYks106HmdCWm7uxx&part=snippet", { next: { revalidate: 86400 * 7 } });
+    const API_KEY = process.env.API_KEY;
+    const marqueeData = await fetch(`https://youtube.googleapis.com/youtube/v3/playlistItems?key=${API_KEY}&playlistId=PLYH1y5BwRZwEMp8OfYks106HmdCWm7uxx&part=snippet`, { next: { revalidate: 86400 * 7 } });
 
     const data = await marqueeData.json();
 
