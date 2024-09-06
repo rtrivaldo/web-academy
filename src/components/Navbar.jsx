@@ -21,7 +21,7 @@ export default function Navbar() {
     };
 
     return (
-        <div className="flex justify-between items-center p-4 shadow-sm fixed top-0 w-full bg-white/80 dark:bg-slate-950/80 backdrop-blur-md z-50">
+        <div className="flex justify-between items-center p-4 fixed top-0 w-full bg-white/80 dark:bg-slate-950/80 backdrop-blur-md z-50">
             {/* hamburger */}
             <div className="text-xl p-2 md:hidden cursor-pointer rounded-md hover:bg-slate-100 hover:text-slate-900 focus:bg-slate-100 focus:text-slate-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 dark:bg-slate-950 dark:hover:bg-slate-800 dark:hover:text-slate-50 dark:focus:bg-slate-800 dark:focus:text-slate-50 transition-colors" onClick={handleHamburger}>
                 <div className="flex flex-col gap-1">
@@ -90,7 +90,7 @@ export default function Navbar() {
             {/* useful links */}
             <div className="flex items-center">
                 {/* github */}
-                <Link href={"/"} className="text-xl p-2 rounded-md hover:bg-slate-100 hover:text-slate-900 focus:bg-slate-100 focus:text-slate-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 dark:bg-slate-950 dark:hover:bg-slate-800 dark:hover:text-slate-50 dark:focus:bg-slate-800 dark:focus:text-slate-50 transition-colors">
+                <Link href={"https://github.com/rtrivaldo/web-academy"} className="text-xl p-2 rounded-md hover:bg-slate-100 hover:text-slate-900 focus:bg-slate-100 focus:text-slate-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 dark:bg-slate-950 dark:hover:bg-slate-800 dark:hover:text-slate-50 dark:focus:bg-slate-800 dark:focus:text-slate-50 transition-colors">
                     <FaGithub />
                 </Link>
 

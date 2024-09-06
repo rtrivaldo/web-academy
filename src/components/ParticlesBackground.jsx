@@ -12,5 +12,5 @@ export default function ParticlesBackground() {
         setColor(resolvedTheme === "dark" ? "#ffffff" : "#000000");
     }, [resolvedTheme]);
 
-    return <Particles className="absolute inset-0 -z-50" quantity={300} ease={80} color={color} refresh />;
+    return <Particles className="absolute inset-0 -z-50" quantity={100} ease={80} color={color} refresh />;
 }
