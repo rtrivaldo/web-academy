@@ -6,7 +6,8 @@ import { FaPlay } from "react-icons/fa";
 
 export default async function HeroSection() {
     const API_KEY = process.env.API_KEY;
-    const marqueeData = await fetch(`https://youtube.googleapis.com/youtube/v3/playlistItems?key=${API_KEY}&playlistId=PLYH1y5BwRZwEMp8OfYks106HmdCWm7uxx&part=snippet`, { next: { revalidate: 86400 * 7 } });
+    const playlistId = "PLYH1y5BwRZwEMp8OfYks106HmdCWm7uxx";
+    const marqueeData = await fetch(`https://youtube.googleapis.com/youtube/v3/playlistItems?key=${API_KEY}&playlistId=${playlistId}&part=snippet`, { next: { revalidate: 86400 * 7 } });
 
     const data = await marqueeData.json();
 
@@ -41,7 +42,7 @@ export default async function HeroSection() {
                                             <FaPlay className="size-6 text-white" />
                                         </div>
                                     </div>
-                                    <Image src={thumbnail} alt="" width={1280} height={720} />
+                                    <Image src={thumbnail} alt="" width={1280} height={720} className="w-full h-full object-cover" />
                                 </div>
                             </Link>
                         );
@@ -63,7 +64,7 @@ export default async function HeroSection() {
                                             <FaPlay className="size-6 text-white" />
                                         </div>
                                     </div>
-                                    <Image src={thumbnail} alt="" width={1280} height={720} />
+                                    <Image src={thumbnail} alt="" width={1280} height={720} className="w-full h-full object-cover" />
                                 </div>
                             </Link>
                         );
