@@ -36,8 +36,8 @@ export default async function HeroSection() {
 
                         return (
                             <Link href={`https://www.youtube.com/watch?v=${videoId}`} key={data.id} className="w-full rounded-md overflow-hidden">
-                                <div className="w-[200px] h-[120px] md:w-[300px] md:h-[160px] relative">
-                                    <div className="w-full h-full absolute inset-y-0 bg-black/40 hover:bg-black/15 dark:bg-black/50 dark:hover:bg-black/30 transition-all duration-300 ease-out">
+                                <div className="w-[200px] h-[120px] md:w-[300px] md:h-[160px] relative group">
+                                    <div className="w-full h-full absolute inset-y-0 bg-black/20 group-hover:[&:not(:hover)]:bg-black/70 dark:group-hover:[&:not(:hover)]:bg-black/60 transition-all duration-300 ease-out">
                                         <div className="w-full h-full flex justify-center items-center opacity-0 hover:opacity-100 transition-all duration-300 ease-out">
                                             <FaPlay className="size-6 text-white" />
                                         </div>
@@ -58,8 +58,8 @@ export default async function HeroSection() {
 
                         return (
                             <Link href={`https://www.youtube.com/watch?v=${videoId}`} key={data.id} className="w-full rounded-md overflow-hidden">
-                                <div className="w-[200px] h-[120px] md:w-[300px] md:h-[160px] relative">
-                                    <div className="w-full h-full absolute inset-y-0 bg-black/40 hover:bg-black/15 dark:bg-black/50 dark:hover:bg-black/30 transition-all duration-300 ease-out">
+                                <div className="w-[200px] h-[120px] md:w-[300px] md:h-[160px] relative group">
+                                    <div className="w-full h-full absolute inset-y-0 bg-black/20 group-hover:[&:not(:hover)]:bg-black/70 dark:group-hover:[&:not(:hover)]:bg-black/60 transition-all duration-300 ease-out">
                                         <div className="w-full h-full flex justify-center items-center opacity-0 hover:opacity-100 transition-all duration-300 ease-out">
                                             <FaPlay className="size-6 text-white" />
                                         </div>
