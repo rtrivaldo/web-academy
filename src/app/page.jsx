@@ -1,3 +1,4 @@
+import ArticleSection from "@/components/ArticleSection";
 import FeatureSection from "@/components/FeatureSection";
 import HeroSection from "@/components/HeroSection";
 import ParticlesBackground from "@/components/ParticlesBackground";
@@ -11,6 +12,8 @@ export default function Home() {
             <FeatureSection />
 
             <RecommendedVideoSection />
+
+            <ArticleSection />
 
             <ParticlesBackground />
         </main>
