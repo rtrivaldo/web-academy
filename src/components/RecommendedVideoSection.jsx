@@ -30,7 +30,7 @@ export default async function RecommendedVideoSection() {
                     <p className="mt-6 text-sm lg:text-base">Raih kesempatan untuk meningkatkan keterampilan coding Anda dengan Laravel 11 melalui koleksi video pembelajaran terlengkap dan terstruktur. Baik Anda seorang pemula yang ingin memahami dasar-dasar Laravel maupun developer berpengalaman yang ingin memperdalam pengetahuan.</p>
 
                     {/* link ke video youtube */}
-                    <Link href={"https://www.youtube.com/playlist?list=PLFIM0718LjIW1Xb7cVj7LdAr32ATDQMdr"} className="block mt-10">
+                    <Link href={"/video/fullstack"} className="block mt-10">
                         <Button variant={"outline"} className="rounded-sm flex items-center gap-2 lg:text-base px-4 lg:p-6 w-full md:w-auto group">
                             Mulai Belajar <FaChevronRight className="size-3 group-hover:translate-x-1 transition-all duration-300 ease-out" />
                         </Button>

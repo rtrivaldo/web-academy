@@ -6,9 +6,9 @@ import { MdOutlineAlternateEmail } from "react-icons/md";
 export default function Footer() {
     return (
         <div className="mt-32 mb-10 px-6 md:px-10 border-t dark:border-neutral-400/20">
-            <div className="mt-10 max-w-screen-xl mx-auto flex justify-between items-center">
+            <div className="mt-10 max-w-screen-xl mx-auto flex justify-between items-center gap-10">
                 {/* credits */}
-                <p className="text-sm text-neutral-500 dark:text-neutral-400 font-semibold">
+                <p className="text-xs md:text-sm leading-loose text-neutral-500 dark:text-neutral-400 font-semibold">
                     Built by{" "}
                     <Link href={"https://www.linkedin.com/in/rivaldo-tandoko/"} className="underline underline-offset-4">
                         Rivaldo Tandoko
@@ -20,7 +20,7 @@ export default function Footer() {
                     .
                 </p>
 
-                <div className="mt-3 flex gap-4 text-neutral-500 dark:text-neutral-400 text-xl">
+                <div className="flex gap-4 text-neutral-500 dark:text-neutral-400 text-xl">
                     {/* github link */}
                     <Link href={"https://github.com/rtrivaldo"}>
                         <FaGithub />

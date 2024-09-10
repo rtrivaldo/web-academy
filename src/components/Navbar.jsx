@@ -1,16 +1,18 @@
 "use client";
 
 import Link from "next/link";
+import { useTheme } from "next-themes";
+import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 import { FaGithub } from "react-icons/fa";
 import { RxMoon } from "react-icons/rx";
 import { IoSunny } from "react-icons/io5";
-import { useTheme } from "next-themes";
-import { useState } from "react";
-import { usePathname } from "next/navigation";
+import { ImCross } from "react-icons/im";
 
 export default function Navbar() {
     const { setTheme } = useTheme();
@@ -34,10 +36,46 @@ export default function Navbar() {
                 </div>
             </div>
 
-            {/* logo */}
-            <div className="flex gap-6 items-center">
-                <h2 className="font-semibold">Web Academy</h2>
+            {/* sibarmenu for mobiles */}
+            <div className={`flex flex-col gap-4 absolute top-0 w-full h-screen px-10 py-32 bg-slate-950 transition-all duration-300 ease-out ${isOpen ? "right-0" : "right-[100%]"}`}>
+                <Link href={"/"} className="font-semibold text-xl" onClick={handleHamburger}>
+                    Beranda
+                </Link>
+                <Accordion type="single" collapsible>
+                    <AccordionItem value="video" className="!border-none">
+                        <AccordionTrigger className="!no-underline font-semibold text-xl p-0">Video</AccordionTrigger>
+                        <AccordionContent className="!pt-4 !px-4 flex flex-col gap-4">
+                            <Link href={"/video/fundamental"} className="font-semibold text-base" onClick={handleHamburger}>
+                                Fundamental
+                            </Link>
+                            <Link href={"/video/frontend"} className="font-semibold text-base" onClick={handleHamburger}>
+                                Frontend
+                            </Link>
+                            <Link href={"/video/backend"} className="font-semibold text-base" onClick={handleHamburger}>
+                                Backend
+                            </Link>
+                            <Link href={"/video/fullstack"} className="font-semibold text-base" onClick={handleHamburger}>
+                                Fullstack
+                            </Link>
+                        </AccordionContent>
+                    </AccordionItem>
+                </Accordion>
+                <Link href={"/"} className="font-semibold text-xl" onClick={handleHamburger}>
+                    Artikel
+                </Link>
+                <Link href={"/"} className="font-semibold text-xl" onClick={handleHamburger}>
+                    Lainnya
+                </Link>
+
+                <div className="absolute top-6 right-6" onClick={handleHamburger}>
+                    <ImCross />
+                </div>
             </div>
+
+            {/* logo */}
+            <Link href={"/"} className="hidden md:flex gap-6 items-center">
+                <h2 className="font-semibold">Web Academy</h2>
+            </Link>
 
             {/* menu links */}
             <div className="hidden md:block">
@@ -52,7 +90,7 @@ export default function Navbar() {
 
                         {/* videos */}
                         <NavigationMenuItem>
-                            <NavigationMenuTrigger className={pathname === "/kategori" ? "bg-slate-100 text-slate-900 dark:bg-slate-800 dark:text-slate-50" : ""}>Videos</NavigationMenuTrigger>
+                            <NavigationMenuTrigger className={pathname === "/kategori" ? "bg-slate-100 text-slate-900 dark:bg-slate-800 dark:text-slate-50" : ""}>Video</NavigationMenuTrigger>
                             <NavigationMenuContent className="p-4">
                                 <div className="grid grid-cols-2 w-max max-w-[500px]">
                                     <Link href={"/video/fundamental"} className="w-full">
@@ -94,10 +132,10 @@ export default function Navbar() {
                             </NavigationMenuContent>
                         </NavigationMenuItem>
 
-                        {/* about */}
+                        {/* article */}
                         <NavigationMenuItem>
                             <Link href={"/"} legacyBehavior passHref>
-                                <NavigationMenuLink className={`${navigationMenuTriggerStyle()} ${pathname === "/tentang" ? "bg-slate-100 text-slate-900 dark:bg-slate-800 dark:text-slate-50" : ""}`}>Tentang Kami</NavigationMenuLink>
+                                <NavigationMenuLink className={`${navigationMenuTriggerStyle()} ${pathname === "/tentang" ? "bg-slate-100 text-slate-900 dark:bg-slate-800 dark:text-slate-50" : ""}`}>Artikel</NavigationMenuLink>
                             </Link>
                         </NavigationMenuItem>
 

@@ -30,7 +30,7 @@ export default async function HeroSection() {
             </div>
 
             {/* button */}
-            <Link href={"/"}>
+            <Link href={"/video/fundamental"}>
                 <ShimmerButton className="shadow-2xl mt-6">
                     <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 ">Mulai Sekarang</span>
                 </ShimmerButton>

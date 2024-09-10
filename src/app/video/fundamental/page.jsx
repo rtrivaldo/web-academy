@@ -28,7 +28,7 @@ export default async function Fundamental() {
     return (
         <main className="px-6 md:px-10 h-max relative">
             <div className="mt-20 md:mt-32 max-w-screen-xl mx-auto">
-                <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold">Fundamentals</h1>
+                <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold">Fundamental</h1>
 
                 <YoutubeVideoList title="HTML Dasar" data={htmlData} className="mt-4 md:mt-6" />
 
