@@ -1,15 +1,25 @@
 import Link from "next/link";
+
 import ShimmerButton from "./magicui/shimmer-button";
 import Marquee from "./magicui/marquee";
 import Image from "next/image";
+
 import { FaPlay } from "react-icons/fa";
 
 export default async function HeroSection() {
     const API_KEY = process.env.API_KEY;
-    const playlistId = "PLYH1y5BwRZwEMp8OfYks106HmdCWm7uxx";
-    const marqueeData = await fetch(`https://youtube.googleapis.com/youtube/v3/playlistItems?key=${API_KEY}&playlistId=${playlistId}&part=snippet`, { next: { revalidate: 86400 * 7 } });
 
+    /* playlistId dari Web Academy Hero */
+    const playlistId = "PLYH1y5BwRZwEMp8OfYks106HmdCWm7uxx";
+
+    /* fetching data dari Youtube API */
+    const marqueeData = await fetch(`https://youtube.googleapis.com/youtube/v3/playlistItems?key=${API_KEY}&playlistId=${playlistId}&part=snippet&maxResults=50`, { next: { revalidate: 86400 * 7 } });
     const data = await marqueeData.json();
+    const dataItems = await data.items;
+
+    /* membagi data menjadi 2 baris */
+    const firstRow = dataItems.slice(0, dataItems.length / 2);
+    const secondRow = dataItems.slice(dataItems.length / 2);
 
     return (
         <div className="relative flex h-screen w-full flex-col items-center justify-center pt-20 md:pt-32">
@@ -28,9 +38,9 @@ export default async function HeroSection() {
 
             <div className="relative mt-32 w-full">
                 {/* slider to left */}
-                <Marquee pauseOnHover className="[--duration:80s]">
+                <Marquee pauseOnHover className="[--duration:100s]">
                     {/* mapping card from web academy hero playlist */}
-                    {data.items.map((data) => {
+                    {firstRow.map((data) => {
                         const thumbnail = data.snippet.thumbnails.maxres.url;
                         const videoId = data.snippet.resourceId.videoId;
 
@@ -50,9 +60,9 @@ export default async function HeroSection() {
                 </Marquee>
 
                 {/* slider to right */}
-                <Marquee reverse pauseOnHover className="[--duration:80s]">
+                <Marquee reverse pauseOnHover className="[--duration:100s]">
                     {/* mapping card from web academy hero playlist */}
-                    {data.items.map((data) => {
+                    {secondRow.map((data) => {
                         const thumbnail = data.snippet.thumbnails.maxres.url;
                         const videoId = data.snippet.resourceId.videoId;
 
@@ -70,6 +80,8 @@ export default async function HeroSection() {
                         );
                     })}
                 </Marquee>
+
+                {/* gradient di Marquee Track */}
                 <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white dark:from-slate-950"></div>
                 <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white dark:from-slate-950"></div>
             </div>

@@ -6,11 +6,13 @@ import { Button } from "./ui/button";
 export default function ArticleSection() {
     return (
         <div className="mt-20 md:mt-40 max-w-screen-xl mx-auto">
+            {/* headings */}
             <h4 className="font-semibold text-sm md:text-lg hidden md:block">Artikel</h4>
             <h1 className="mt-2 text-2xl md:text-4xl lg:text-5xl font-bold text-center md:text-left">Sumber Daya Web Programming</h1>
             <p className="mt-4 md:mt-6 text-sm md:text-base text-center md:text-left">Temukan tips, trik, dan tutorial web programming terbaru</p>
 
             <div className="mt-10 flex flex-col md:flex-row gap-10 md:gap-20">
+                {/* artikel 1 */}
                 <div className="md:w-1/3">
                     <div className="w-full h-[200px] bg-gray-50"></div>
 
@@ -29,6 +31,7 @@ export default function ArticleSection() {
                     </div>
                 </div>
 
+                {/* artikel 2 */}
                 <div className="md:w-1/3">
                     <div className="w-full h-[200px] bg-gray-50"></div>
 
@@ -47,6 +50,7 @@ export default function ArticleSection() {
                     </div>
                 </div>
 
+                {/* artikel 3 */}
                 <div className="md:w-1/3">
                     <div className="w-full h-[200px] bg-gray-50"></div>
 
