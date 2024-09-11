@@ -134,26 +134,16 @@ export default function Navbar() {
 
                         {/* article */}
                         <NavigationMenuItem>
-                            <Link href={"/"} legacyBehavior passHref>
+                            <Link href={"/artikel"} legacyBehavior passHref>
                                 <NavigationMenuLink className={`${navigationMenuTriggerStyle()} ${pathname === "/tentang" ? "bg-slate-100 text-slate-900 dark:bg-slate-800 dark:text-slate-50" : ""}`}>Artikel</NavigationMenuLink>
                             </Link>
                         </NavigationMenuItem>
 
-                        {/* other */}
+                        {/* add video */}
                         <NavigationMenuItem>
-                            <NavigationMenuTrigger>Lainnya</NavigationMenuTrigger>
-                            <NavigationMenuContent className="p-4">
-                                <div className="grid grid-cols-2 w-max max-w-[500px]">
-                                    <Link href={"/"} className="w-full">
-                                        <NavigationMenuLink asChild>
-                                            <div className="p-4 flex flex-col w-full h-full rounded-md hover:bg-slate-100 hover:text-slate-900 focus:bg-slate-100 focus:text-slate-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 dark:bg-slate-950 dark:hover:bg-slate-800 dark:hover:text-slate-50 dark:focus:bg-slate-800 dark:focus:text-slate-50 transition-colors">
-                                                <h4 className="font-semibold">Fundamental</h4>
-                                                <p className="mt-1 text-sm">Mencakup dasar-sadar web programming seperti HTML, CSS, dan JavaScript.</p>
-                                            </div>
-                                        </NavigationMenuLink>
-                                    </Link>
-                                </div>
-                            </NavigationMenuContent>
+                            <Link href={"https://forms.gle/L5T9XAqSQ6khPLUN6"} legacyBehavior passHref>
+                                <NavigationMenuLink className={`${navigationMenuTriggerStyle()} ${pathname === "/tentang" ? "bg-slate-100 text-slate-900 dark:bg-slate-800 dark:text-slate-50" : ""}`}>Tambahkan Video</NavigationMenuLink>
+                            </Link>
                         </NavigationMenuItem>
                     </NavigationMenuList>
                 </NavigationMenu>
